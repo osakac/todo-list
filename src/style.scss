@@ -1,0 +1,147 @@
+$color: #345068;
+$borderRadius: 15px;
+
+@mixin btn {
+	padding: 5px;
+	border-radius: $borderRadius;
+	font-weight: bold;
+	font-size: 13px;
+	cursor: pointer;
+	letter-spacing: 1px;
+	color: $color;
+	text-transform: uppercase;
+	font-family: inherit;
+}
+
+@mixin task-status {
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: 1px;
+	border-radius: $borderRadius;
+	padding: 5px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lucida Sans Unicode", sans-serif;
+	color: $color;
+}
+
+.wrapper {
+	padding: 50px 100px 0;
+}
+
+.btn-primary {
+	@include btn;
+	border: none;
+	background: green;
+	color: azure;
+}
+
+.btn-danger {
+	@include btn;
+	border: none;
+	background: red;
+	color: azure;
+}
+
+.create__task {
+	height: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: 30px;
+}
+
+.loader {
+	display: block;
+	margin: 0 auto;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.no-tasks-title {
+	text-align: center;
+}
+
+.create__task small {
+	font-weight: bold;
+}
+
+.task__field {
+	width: 30%;
+	border-radius: $borderRadius;
+	padding: 5px 10px;
+	font-size: 18px;
+	border: 2px solid $color;
+}
+
+.task__field:focus {
+	outline-color: green;
+}
+
+hr {
+	margin: 20px 0;
+	border: 1px solid $color;
+}
+
+.task__category__chips {
+	@include btn;
+	border: 2px solid $color;
+	background: transparent;
+	margin-right: 10px;
+}
+
+.task__category__chips:hover {
+	background: #d1d1d1;
+}
+
+.task__category__counter {
+	background: #d1d1d1;
+	padding: 2px 4px;
+	border-radius: $borderRadius;
+}
+
+.task-item {
+	border: 2px solid $color;
+	padding: 10px;
+	border-radius: $borderRadius;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: bold;
+
+	p {
+		width: 90%;
+	}
+}
+
+.task-item__tools {
+	width: 200px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.task-status-active {
+	@include task-status;
+	border: 1px solid green;
+	color: green;
+	cursor: pointer;
+}
+
+.task-status-done {
+	@include task-status;
+	background: green;
+	color: azure;
+	cursor: pointer;
+}
